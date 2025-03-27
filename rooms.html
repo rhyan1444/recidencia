@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Jamier Hotel</title>
+</head>
+<body class="bg-gray-100">
+    
+      <!-- Navbar -->
+      <nav class="bg-white shadow-lg fixed w-full z-10 top-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-blue-600">Residencia Del Hamor</h1>
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-links" class="hidden md:flex flex-row space-x-0 text-gray-700 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none items-center justify-center">
+                <li><a href="index.html" class="hover:text-blue-500 block px-6 py-2">Home</a></li>
+                <li><a href="rooms.html" class="hover:text-blue-500 block px-6 py-2">Rooms</a></li>
+                <li><a href="booking.html" class="hover:text-blue-500 block px-6 py-2">Booking</a></li>
+                <li><a href="contact.html" class="hover:text-blue-500 block px-6 py-2">Contact</a></li>
+            </ul>
+        </div>
+      </nav>
+      
+      <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+      
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+        });
+      </script>
+
+    <!-- Featured Rooms -->
+    <section class="bg-gray-50 py-16 px-6 mt-16">
+        <h2 class="text-4xl font-bold text-center text-gray-800">Our Exclusive Rooms</h2>
+        <div class="grid md:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer" onclick="openModal('deluxeModal')">
+                <img src="img1.jpg" class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">Deluxe Suite</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer" onclick="openModal('executiveModal')">
+                <img src="img2.jpg" class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">Executive Room</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer" onclick="openModal('presidentialModal')">
+                <img src="img3.jpg" class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mt-4">Presidential Suite</h3>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <a href="booking.html" class="bg-gradient-to-r from-blue-500 to-blue-700 text-black text-lg font-semibold px-8 py-4 rounded-full shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                Book Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Room Modals -->
+    <div id="deluxeModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center" style="display: none;">
+        <div class="bg-white p-9 rounded-lg shadow-lg w-96 mx-auto relative">
+            <h3 class="text-2xl font-semibold">Deluxe Suite</h3>
+            <div class="carousel w-full overflow-hidden relative">
+                <div class="slides flex transition-transform duration-500">
+                    <img src="deluxe1.jpg" class="w-full">
+                    <img src="deluxe2.jpg" class="w-full">
+                    <img src="deluxe3.jpg" class="w-full">
+                </div>
+            </div>
+            <p class="text-gray-600 mt-1">Experience luxury and comfort with a Stunning Sunset View.</p>
+            <p class="text-gray-800 mt-1">Private Balcony or Terrace</p>
+            <p class="text-gray-800 mt-1">Wi-Fi – Free internet accesst</p>
+            <p class="text-gray-800 mt-1">Price: ₱5000/night</p>
+            <p class="text-green-900 mt-1">9 rooms available</p>
+            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg" onclick="closeModal('deluxeModal')">Close</button>
+        </div>
+    </div>
+
+    <div id="executiveModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center" style="display: none;">
+        <div class="bg-white p-9 rounded-lg shadow-lg w-96 mx-auto relative">
+            <h3 class="text-2xl font-semibold">Executive Room</h3>
+            <div class="carousel w-full overflow-hidden relative">
+                <div class="slides flex transition-transform duration-500">
+                    <img src="executive1.jpg" class="w-full">
+                    <img src="executive2.jpg" class="w-full">
+                    <img src="executive3.jpg" class="w-full">
+                </div>
+            </div>
+            <p class="text-gray-600 mt-2">Perfect for business travelers with modern amenities.</p>
+            <p class="text-gray-800 mt-1">Wi-Fi – Free internet accesst</p>
+
+            <p class="text-gray-800 mt-1">TV – With cable or streaming services</p>
+            <p class="text-gray-800 mt-1">Luxury Toiletries  Slippers – Comfortable wear for guests</p>
+            <p class="text-gray-800 mt-1">Price: ₱2500/night</p>
+            <p class="text-green-900 mt-1">5 rooms available</p>
+            <button class="mt-4 bg-blue-600 text- px-4 py-2 rounded-lg" onclick="closeModal('executiveModal')">Close</button>
+        </div>
+    </div>
+
+    <div id="presidentialModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center" style="display: none;">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-96 mx-auto relative">
+            <h3 class="text-2xl font-semibold">Presidential Suite</h3>
+            <div class="carousel w-full overflow-hidden relative">
+                <div class="slides flex transition-transform duration-500">
+                    <img src="presidential1.jpg" class="w-full">
+                    <img src="presidential2.jpg" class="w-full">
+                    <img src="presidential3.jpg" class="w-full">
+                </div>
+            </div>
+            <p class="text-gray-600 mt-1">A luxurious stay with premium services and amenities.</p>
+            <p class="text-gray-800 mt-1">TV – With cable or streaming services</p>
+            <p class="text-gray-800 mt-1">Wi-Fi – Free internet accesst</p> 
+            <p class="text-gray-800 mt-1">Jacuzzi – With scenic views</p>
+            <p class="text-gray-800 mt-1">Price: ₱50.000/night</p>
+            <p class="text-green-900 mt-1">7 rooms available</p>
+            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg" onclick="closeModal('presidentialModal')">Close</button>
+        </div>
+        
+    </div>
+
+    <!-- JavaScript for Modal & Carousel -->
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "flex";
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "none";
+        }
+
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            let slides = carousel.querySelector('.slides');
+            let index = 0;
+
+            // Ensure slides are flexbox-based
+            slides.style.display = "flex";
+
+            setInterval(() => {
+                index = (index + 1) % slides.children.length;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
